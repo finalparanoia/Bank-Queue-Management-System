@@ -2,9 +2,6 @@ import os
 import time
 def get_op():
     global port_normal,port_vip,normal_num,vip_num,port_vip_status,port_normal_status,pos_dict
-    #定义全局变量，用来切换客户和工作人员窗口时数据能同步更新。
-    #port_normal,port_vip表示对应业务的排队名单
-    #pos_dict  是整个数据存储的字典
     while True:
         print("""
              \033[5;32;40m银行排队叫号系统\033[0m
@@ -23,8 +20,6 @@ def get_op():
             print('    \033[1;35;40m你的排队号码是N{},当前你选择的是普通服务。\033[0m\n'.format(normal_num))
             time.sleep(1)
             os.system("cls")
-            #print(pos_dict['银行卡服务窗口'])
-            #上面是一行禁用的代码，不禁用时用来测试运行时结果是否正确。
             nor_list(pos_dict)
         elif id == 2:
             vip_num = vip_num + 1
@@ -90,7 +85,6 @@ def vip_list(pos_dict):
         else:
             get_op()
 
-
 def nor_list(pos_dict):
     while True:
         time.sleep(0.2)
@@ -107,7 +101,6 @@ def nor_list(pos_dict):
         else:
             get_op()
         
-
 def evaluation():
     os.system("cls")
     print("        您对本次服务是否满意？(5-1)\n")
